@@ -1,0 +1,91 @@
+/* Clases de utilidades y estado */
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: #e74c3c;
+    background: #ffeaea;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid #e74c3c;
+}
+
+.success {
+    color: #27ae60;
+    background: #eafaf1;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid #27ae60;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        height: 90vh;
+        margin: 20px auto;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .auth-section, 
+    .chat-section {
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    /* Ajustes específicos para el chat en móviles */
+    .chat-messages {
+        min-height: 150px;
+        padding: 10px;
+    }
+    
+    .message-input-container {
+        padding: 10px 0;
+        gap: 8px;
+    }
+    
+    .message-input-container textarea {
+        min-height: 35px;
+        max-height: 60px;
+        font-size: 14px;
+    }
+    
+    .user-info, .users-list {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 98%;
+        height: 95vh;
+        margin: 10px auto;
+    }
+    
+    .chat-section {
+        padding: 10px;
+    }
+    
+    .chat-messages {
+        min-height: 120px;
+        padding: 8px;
+    }
+    
+    .message-input-container textarea {
+        min-height: 32px;
+        max-height: 50px;
+        font-size: 13px;
+    }
+}

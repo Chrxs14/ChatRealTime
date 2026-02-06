@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Autenticación - Cliente Demo</title>
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utils.css">
+    
+    <!-- Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Chat con Sistema de Autenticación</h1>
+            <p>Registro, Login y Chat en Tiempo Real</p>
+        </div>
+
+        <!-- Sección de Autenticación -->
+        <div id="authSection" class="auth-section">
+            <div id="messageContainer"></div>
+            
+            <!-- Formulario de Login -->
+            <form id="loginForm">
+                <h3>🔐 Iniciar Sesión</h3>
+                <div class="form-group">
+                    <label for="loginUsername">Usuario:</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn">Iniciar Sesión</button>
+                <div class="form-toggle">
+                    <a onclick="toggleForm()">¿No tienes cuenta? Regístrate aquí</a>
+                </div>
+            </form>
+
+            <!-- Formulario de Registro -->
+            <form id="registerForm" class="hidden">
+                <h3>📝 Crear Cuenta</h3>
+                <div class="form-group">
+                    <label for="registerUsername">Usuario:</label>
+                    <input type="text" id="registerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn">Crear Cuenta</button>
+                <div class="form-toggle">
+                    <a onclick="toggleForm()">¿Ya tienes cuenta? Inicia sesión aquí</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Sección de Chat -->
+        <div id="chatSection" class="chat-section hidden">
+            <div id="userInfo" class="user-info">
+                <strong>🎯 Usuario:</strong> <span id="currentUser"></span> | 
+                <strong>📧 Email:</strong> <span id="currentEmail"></span>
+                <div style="float: right;">
+                    <button onclick="ChatManager.clearChatHistory()" class="btn btn-secondary" style="margin-right: 5px;" title="Limpiar historial de chat">🗑️</button>
+                    <button onclick="logout()" class="btn btn-secondary">Cerrar Sesión</button>
+                </div>
+            </div>
+            
+            <div id="usersList" class="users-list">
+                <strong>👥 Usuarios conectados:</strong> <span id="onlineUsers">Cargando...</span>
+            </div>
+            
+            <div id="messages" class="chat-messages">
+                <!-- Botón para ir al final (se muestra cuando hay nuevos mensajes) -->
+                <button id="scrollToBottomBtn" class="scroll-to-bottom-btn hidden" onclick="ChatManager.scrollToBottom()">
+                    ↓ Nuevos mensajes
+                </button>
+            </div>
+            
+            <div class="message-input-container">
+                <textarea id="messageInput" placeholder="Escribe tu mensaje aquí... (Enter para enviar, Shift+Enter para nueva línea)" rows="2"></textarea>
+                <button onclick="sendMessage()" class="btn">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts JavaScript -->
+    <!-- Configuración -->
+    <script src="js/config.js"></script>
+    
+    <!-- Utilidades -->
+    <script src="js/utils/utils.js"></script>
+    
+    <!-- Servicios -->
+    <script src="js/services/authService.js"></script>
+    <script src="js/services/socketService.js"></script>
+    <script src="js/services/messageStorage.js"></script>
+    
+    <!-- Módulos -->
+    <script src="js/modules/auth.js"></script>
+    <script src="js/modules/chat.js"></script>
+    <script src="js/modules/ui.js"></script>
+    
+    <!-- Aplicación principal -->
+    <script src="js/app.js"></script>
+    
+    <!-- Herramientas de desarrollo (solo en localhost) -->
+    <script src="js/dev-tools.js"></script>
+</body>
+</html>

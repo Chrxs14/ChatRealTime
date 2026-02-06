@@ -1,0 +1,207 @@
+/* Componentes específicos de la aplicación */
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 90%;
+    max-width: 800px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.auth-section {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-section {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* Importante para que funcione correctamente el flex */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s;
+    margin: 5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+}
+
+.chat-messages {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    min-height: 200px; /* Altura mínima */
+    max-height: none; /* Remover límite máximo para usar todo el espacio disponible */
+    position: relative; /* Para posicionar el botón de scroll */
+}
+
+.scroll-to-bottom-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.scroll-to-bottom-btn:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.message-header {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.message-content {
+    color: #333;
+}
+
+.system-message {
+    background: #f0f8ff;
+    border-left: 3px solid #667eea;
+    color: #444;
+    font-style: italic;
+}
+
+.stored-message {
+    opacity: 0.85;
+}
+
+.history-indicator {
+    background: #e8f5e8 !important;
+    border-left-color: #28a745 !important;
+    color: #155724 !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+.date-separator {
+    text-align: center;
+    margin: 15px 0;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #6c757d;
+    position: relative;
+}
+
+.date-separator::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 50%;
+    height: 1px;
+    background: #dee2e6;
+    z-index: 1;
+}
+
+.date-separator span {
+    background: #f8f9fa;
+    padding: 0 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.user-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.users-list {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.form-toggle {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-toggle a {
+    color: #667eea;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.message-input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Empuja el input hacia abajo */
+    flex-shrink: 0; /* Evita que se encoja */
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    background: white;
+    position: sticky; /* Mantiene visible al hacer scroll */
+    bottom: 0;
+}
+
+.message-input-container textarea {
+    flex: 1;
+    resize: none; /* Desactivar resize manual para evitar problemas de layout */
+    min-height: 40px;
+    max-height: 80px; /* Reducir altura máxima */
+    overflow-y: auto; /* Scroll interno si el texto es muy largo */
+}

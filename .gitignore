@@ -1,0 +1,238 @@
+# ================================
+# DATOS SENSIBLES Y CONFIGURACIÓN
+# ================================
+# Variables de entorno con secretos
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+
+# Archivos de datos de usuarios (CRÍTICO)
+data/users.json
+data/*.json
+data/backup/
+data/logs/
+
+# Archivos de configuración con credenciales
+config/database.json
+config/secrets.json
+config/production.json
+
+# ================================
+# NODE.JS Y NPM
+# ================================
+# Dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Cache de npm y yarn
+.npm
+.yarn-integrity
+yarn.lock
+
+# Archivos de package-lock opcionales
+# package-lock.json  # Descomenta si quieres ignorarlo
+
+# ================================
+# LOGS Y TEMPORALES
+# ================================
+# Archivos de log
+logs/
+*.log
+log/
+*.log.*
+
+# Archivos temporales
+tmp/
+temp/
+.tmp/
+.cache/
+
+# ================================
+# ARCHIVOS DE BUILD Y DIST
+# ================================
+# Directorios de build
+build/
+dist/
+out/
+.next/
+
+# Archivos compilados
+*.tsbuildinfo
+
+# ================================
+# ARCHIVOS DE SISTEMA
+# ================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ================================
+# IDEs Y EDITORES
+# ================================
+# Visual Studio Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/tasks.json
+# Mantener workspace settings comentado para mantener configuración del equipo
+# .vscode/
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+.vimrc.local
+
+# ================================
+# TESTING Y COVERAGE
+# ================================
+# Cobertura de tests
+coverage/
+.nyc_output/
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Archivos de test
+test-results/
+.karma/
+
+# ================================
+# DESARROLLO Y DEBUGGING
+# ================================
+# Debug de Node.js
+.node_repl_history
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+lib-cov/
+
+# Grunt intermediate storage
+.grunt/
+
+# Bower dependency directory
+bower_components/
+
+# Optional REPL history
+.node_repl_history
+
+# ================================
+# DEPLOYMENT Y SERVICIOS
+# ================================
+# Heroku
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+
+# Railway
+.railway/
+
+# Docker
+.dockerignore
+Dockerfile.prod
+
+# ================================
+# ARCHIVOS PERSONALES
+# ================================
+# Notas personales y borradores
+NOTES.md
+TODO.md
+draft/
+drafts/
+personal/
+
+# Backups locales
+*.backup
+*.bak
+*.old
+
+# ================================
+# OTROS ARCHIVOS SENSIBLES
+# ================================
+# Certificados SSL/TLS
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+
+# Archivos de sesión
+sessions/
+*.session
+
+# Base de datos locales
+*.sqlite
+*.sqlite3
+*.db
+
+# Archivos de importación/exportación
+exports/
+imports/
+*.csv
+*.xlsx
+
+# ================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ================================
+# Archivos de usuarios de prueba
+test-users.json
+demo-data.json
+
+# Uploads de usuarios
+uploads/
+user-uploads/
+public/uploads/
+
+# Archivos de métricas y analytics
+analytics/
+metrics/
+stats/
